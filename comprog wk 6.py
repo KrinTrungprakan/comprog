@@ -3,17 +3,34 @@ import random
 class thaigen:
     def __init__(self):
         self.lastpos = None
+        self.thc = thc
         
     def get(self):
-        consonant = random.choice(thc)
+        consonant = random.choice(self.thc)
         self.lastpos = consonant[0]
         return consonant[0]
     
     def get_answer(self):
-        for consonant in thc:
+        for consonant in self.thc:
             if consonant.startswith(self.lastpos):
                 split_entry = consonant
                 return [split_entry[0], split_entry[1], *split_entry[2:].split()]
+            
+    
+    def dont_ask_this(self, cons):
+      #removes the consonant from thc so that it won't be asked again
+      #look for the consonant cons in thc 
+      for line in self.thc:
+          if cons in line:
+              #print("removing "+cons)
+              self.thc.remove(line)
+
+            
+    def howmany(self):
+         count = len(self.thc)
+         return count
+    
+         
 thc = [
     "กMgor gai",
     "ขHkho khai",
@@ -65,3 +82,6 @@ gen = thaigen()
 consonant = gen.get()
 print("Random consonant:", consonant)
 print("Answer:", gen.get_answer())
+gen.dont_ask_this(consonant)
+print(gen.howmany())
+
