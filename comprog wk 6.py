@@ -30,6 +30,28 @@ class thaigen:
          count = len(self.thc)
          return count
     
+    def reset(self):
+
+        self.thc = ["กMgor gai", "ขHkho khai", "ฃHkho khuat (not used)",
+
+"คLkho khwai","ฅLkho khon (not used)", "ฆLkho rakhang", "งMngo ngu",
+
+"จHjoor jaan","ฉHcho ching","ชMcho chang", "ซLso so", "ฌLso cheer",
+
+"ญLyo ying", "ฎMdo chada","ฏMto patak", "ฐHtho than","ฑLtho montho",
+
+"ฒLtho phuthao","ณLno nen","ดMdo dek","ตMto tao","ถHtho thung",
+
+"ทLtho thahan","ธLtho thong","นLno nu","บMbo baimai","ปMpo pla",
+
+"ผHpho phueng","ฝHfo fa","พLpho phan","ฟLfo fan","ภLpho sam-phao",
+
+"มLmo ma","ยLyo yak","รLro rua","ลLlo ling","วLwo waen","ศHso sala",
+
+"ษHso rusi","สHso suea","หHho hip","ฬLlo chula","อMo ang",
+
+"ฮLho nokhuk"]
+    
          
 thc = [
     "กMgor gai",
@@ -84,4 +106,5 @@ print("Random consonant:", consonant)
 print("Answer:", gen.get_answer())
 gen.dont_ask_this(consonant)
 print(gen.howmany())
-
+gen.reset()
+print(gen.howmany())
